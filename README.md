@@ -141,3 +141,27 @@ Dataset contains 6,034,195 rows. The columns in the table are:<br />
 <b>Tags </b>: 'c++ c'
 </pre>
 
+### Mapping the real-world problem to a Machine Learning Problem
+
+<p> **It is a multi-label classification problem**
+
+<br>
+<b>Multi-label Classification</b>: Multilabel classification assigns to each sample a set of target labels. This can be thought as predicting properties of a data-point that are not mutually exclusive, such as topics that are relevant for a document. A question on Stackoverflow might be about any of C, Pointers, FileIO and/or memory-management at the same time or none of these. <br>
+</p>
+
+### Performance Metric 
+
+The [F1 score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html) can be interpreted as a weighted average of the precision and recall, where an F1 score reaches its best value at 1 and worst score at 0. The relative contribution of precision and recall to the F1 score are equal. The formula for the F1 score is:
+
+<i>F1 = 2 * (precision * recall) / (precision + recall)</i><br>
+
+In the multi-class and multi-label case, this is the weighted average of the F1 score of each class. 
+
+* **'Micro f1 score':** </b><br>
+Calculate metrics globally by counting the total true positives, false negatives and false positives. This is a better metric when we have class imbalance.
+
+* **'Macro f1 score':** </b><br>
+Calculate metrics for each label, and find their unweighted mean. This does not take label imbalance into account.
+
+* [Hamming loss](https://www.kaggle.com/wiki/HammingLoss) </b>: The Hamming loss is the fraction of labels that are incorrectly predicted.
+
